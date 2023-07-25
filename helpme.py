@@ -2,6 +2,7 @@ import argparse
 import json
 import openai
 import platform
+import os
 
 parser = argparse.ArgumentParser(
     description="Looking for help? Simply ask this program to write your command for you!"
@@ -26,9 +27,12 @@ if operating_system == "Darwin":
 
 model = "gpt-3.5-turbo"
 
-with open("secrets.json", "r") as f:
-    secrets = json.load(f)["key"]
-    openai.api_key = secrets
+if os.getenv("OPENAI_APIKEY") is not None:
+    openai.api_key = os.getenv("OPENAI_APIKEY")
+else:
+    with open("secrets.json", "r") as f:
+        secrets = json.load(f)["key"]
+        openai.api_key = secrets
 
 functions = [
     {
