@@ -9,5 +9,7 @@ Simply type `helpme [prompt]` to get help doing something on the command line. F
 
 # Future Features
 - [ ] Go through the list of all commands that are valid on the current system, and add their descriptions to a vector database. Then, when prompting the model, provide the most relevant commands based on the prompt.
+
 - [ ] Add a flag to the command to allow the user to specify the number of commands to return.
+
 - [ ] Add a flag to the command that will remove the explanation from the command, and only return the command itself.
