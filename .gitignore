@@ -1,0 +1,5 @@
+/build
+/dist
+/helpme.spec
+/secrets.json
+/testing_openai.ipynb
